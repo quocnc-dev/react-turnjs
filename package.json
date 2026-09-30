@@ -1,0 +1,79 @@
+{
+    "name": "react-turnjs",
+    "version": "0.1.0",
+    "description": "React page-flip book component inspired by turn.js",
+    "type": "module",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "prepublishOnly": "npm run build"
+    },
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.14.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.1.0",
+        "@types/node": "^22.9.0",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "@vitejs/plugin-react": "^4.3.4",
+        "eslint": "^9.14.0",
+        "eslint-config-prettier": "^9.1.0",
+        "jsdom": "^25.0.1",
+        "prettier": "^3.3.3",
+        "tsup": "^8.3.5",
+        "typescript": "^5.6.3",
+        "typescript-eslint": "^8.14.0",
+        "vitest": "^2.1.8"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "keywords": [
+        "react",
+        "flipbook",
+        "page-flip",
+        "turn.js",
+        "book",
+        "component"
+    ],
+    "author": "",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/quocnc-dev/react-turnjs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/quocnc-dev/react-turnjs/issues"
+    },
+    "homepage": "https://github.com/quocnc-dev/react-turnjs#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "sideEffects": false
+}
