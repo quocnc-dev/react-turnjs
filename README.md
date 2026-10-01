@@ -83,8 +83,17 @@ Pure helpers are also exported: `viewForPage`, `nextPage`, `prevPage`, `pageRang
 ## Differences from turn.js
 
 - No jQuery, no manual DOM patching — declarative React rendering.
-- Corner-drag with bezier physics is simplified: click zones, buttons, keyboard arrows and a 3D leaf animation instead of pixel-level page curl. The `view`/`range`/paging math is ported 1:1.
+- Corner drag with a rigid page fold: grab a corner (100px zone, like turn.js `cornerSize`), the paper reflects across the fold line tracking your pointer, quick flick or 28%+ travel completes the turn, otherwise it snaps back.
+- Buttons, keyboard, clicks and ref calls animate the same fold along a bezier to the far corner (`easeOutCirc`, same easing as turn.js). The `view`/`range`/paging math is ported 1:1.
 - Events use props (`onTurning`) instead of `.bind()` / `when`.
+
+## Demo
+
+```bash
+npm run demo   # Vite showcase at localhost, imports from 'react-turnjs'
+```
+
+The `example/` app is deployable to Vercel as-is — set the project **Root Directory** to `example`. See `example/README.md`.
 
 ## Development
 

@@ -1,6 +1,6 @@
 {
     "name": "react-turnjs",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "React page-flip book component inspired by turn.js",
     "type": "module",
     "main": "./dist/index.cjs",
@@ -28,7 +28,9 @@
         "lint:fix": "eslint . --fix",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "prepublishOnly": "npm run build"
+        "prepublishOnly": "npm run build",
+        "demo": "npm --prefix example run dev",
+        "demo:build": "npm --prefix example run build"
     },
     "peerDependencies": {
         "react": ">=16.8.0",

@@ -7,10 +7,10 @@ Step-by-step guide. You only need to do the first publish manually — everythin
 - npm account with 2FA enabled (authenticator app, not passkey).
 - Access to the GitHub repo `quocnc-dev/react-turnjs`.
 - Node 24+ and npm 11+:
-  ```bash
-  node -v   # >= 24
-  npm -v    # >= 11
-  ```
+    ```bash
+    node -v   # >= 24
+    npm -v    # >= 11
+    ```
 
 ## First publish (manual, one time only)
 
@@ -39,10 +39,10 @@ npm view react-turnjs version
 
 1. Go to `https://www.npmjs.com/package/react-turnjs` → **Settings** → **Trusted Publishers**.
 2. Add publisher:
-   - Provider: **GitHub Actions**
-   - Organization/user: `quocnc-dev`
-   - Repository: `react-turnjs`
-   - Workflow file: `publish.yml`
+    - Provider: **GitHub Actions**
+    - Organization/user: `quocnc-dev`
+    - Repository: `react-turnjs`
+    - Workflow file: `publish.yml`
 3. Done. The repo's `.github/workflows/publish.yml` already uses OIDC (`id-token: write`, no `NPM_TOKEN` needed).
 
 ## Every next release (automated)
@@ -73,12 +73,12 @@ npm deprecate react-turnjs@0.1.1 "broken, use 0.1.2"
 
 ## Troubleshooting
 
-| Error | Fix |
-|---|---|
-| `ENEEDAUTH` | You're not logged in: `npm login`, or token expired. |
-| `404` on `npm view` | Package not published yet — do the first publish. |
-| `E403 forbidden` | Name taken or no access; for a new package, pick another name. |
-| Passkey QR stuck on login | Cancel it → sign in with password + authenticator OTP instead. |
-| `There are security risks... use Trusted Publishing` | Don't tick "bypass 2FA" when creating tokens. For CI, use Trusted Publishing (this repo already does). |
-| Action fails with `ENEEDAUTH` | Workflow filename on npmjs must match exactly (`publish.yml`), and runs must be on GitHub-hosted runners. |
-| Wrong files published | Check `files` in `package.json` (`dist`, `README.md`, `LICENSE`) and run `npm run build` before publish. |
+| Error                                                | Fix                                                                                                       |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `ENEEDAUTH`                                          | You're not logged in: `npm login`, or token expired.                                                      |
+| `404` on `npm view`                                  | Package not published yet — do the first publish.                                                         |
+| `E403 forbidden`                                     | Name taken or no access; for a new package, pick another name.                                            |
+| Passkey QR stuck on login                            | Cancel it → sign in with password + authenticator OTP instead.                                            |
+| `There are security risks... use Trusted Publishing` | Don't tick "bypass 2FA" when creating tokens. For CI, use Trusted Publishing (this repo already does).    |
+| Action fails with `ENEEDAUTH`                        | Workflow filename on npmjs must match exactly (`publish.yml`), and runs must be on GitHub-hosted runners. |
+| Wrong files published                                | Check `files` in `package.json` (`dist`, `README.md`, `LICENSE`) and run `npm run build` before publish.  |

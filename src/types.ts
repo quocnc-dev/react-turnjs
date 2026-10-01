@@ -39,6 +39,11 @@ export interface FlipBookProps {
     showNavigation?: boolean;
     /** Click left/right half of the book to turn. Default true. */
     clickable?: boolean;
+    /**
+     * Size in px of the corner grab zone for drag-to-flip.
+     * Same meaning as turn.js `cornerSize`. Default 100.
+     */
+    cornerSize?: number;
 
     // --- turn.js events (1-indexed) ---
     /** Fired before the flip starts. Return false to cancel. */
